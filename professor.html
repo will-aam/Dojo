@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Área do Professor - Dojo TC</title>
+    <link rel="stylesheet" href="styles/professor.css" />
+    <link rel="icon" href="data:;base64,iVBORw0KGgo=" />
+  </head>
+  <body>
+    <header>
+      <h1>Área do Professor - Sistema do Dojo</h1>
+    </header>
+
+    <nav>
+      <ul>
+        <li><a href="#marcar-presenca">Marcar Presença</a></li>
+        <li><a href="#historico-presenca">Histórico de Presenças</a></li>
+        <li><a href="#alertas">Alertas</a></li>
+      </ul>
+    </nav>
+
+    <main>
+      <section id="marcar-presenca" aria-labelledby="titulo-marcar-presenca">
+        <h2 id="titulo-marcar-presenca">Controle de Presença Diária</h2>
+        <p id="data-aula">📅 Quarta-feira, 30 de abril de 2025</p>
+        <div id="busca-alunos">
+          <form
+            onsubmit="alert('Funcionalidade em desenvolvimento'); return false;"
+          >
+            <label for="busca">🔍 Buscar aluno:</label>
+            <input
+              type="search"
+              id="busca"
+              name="busca"
+              placeholder="Digite o nome..."
+            />
+            <label for="filtro-faixa">Filtrar por Faixa:</label>
+            <select id="filtro-faixa" name="faixa">
+              <option value="">Todas</option>
+              <option value="branca">Branca</option>
+              <option value="azul">Azul</option>
+              <option value="roxa">Roxa</option>
+              <option value="marrom">Marrom</option>
+              <option value="preta">Preta</option>
+            </select>
+            <button type="submit">Filtrar</button>
+          </form>
+        </div>
+
+        <div id="lista-presenca">
+          <h3>Alunos Ativos</h3>
+          <form
+            id="form-presenca"
+            onsubmit="alert('Funcionalidade em desenvolvimento'); return false;"
+          >
+            <ul>
+              <li>
+                <input
+                  type="checkbox"
+                  id="aluno1"
+                  name="presenca[]"
+                  value="1"
+                  checked
+                />
+                <label for="aluno1"
+                  ><a href="#perfil-aluno" onclick="carregarPerfilAluno(1)"
+                    >João Silva</a
+                  ></label
+                >
+                | <span>Faixa Azul</span> |
+                <img
+                  src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
+                  alt="Foto João Silva"
+                  width="30"
+                />
+              </li>
+              <li>
+                <input
+                  type="checkbox"
+                  id="aluno2"
+                  name="presenca[]"
+                  value="2"
+                />
+                <label for="aluno2"
+                  ><a href="#perfil-aluno" onclick="carregarPerfilAluno(2)"
+                    >Maria Oliveira</a
+                  ></label
+                >
+                | <span>Faixa Branca</span> |
+                <img
+                  src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
+                  alt="Foto Maria Oliveira"
+                  width="30"
+                />
+              </li>
+              <li>
+                <input
+                  type="checkbox"
+                  id="aluno3"
+                  name="presenca[]"
+                  value="3"
+                  checked
+                />
+                <label for="aluno3"
+                  ><a href="#perfil-aluno" onclick="carregarPerfilAluno(3)"
+                    >Lucas Ferreira</a
+                  ></label
+                >
+                | <span>Faixa Roxa</span> |
+                <img
+                  src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
+                  alt="Foto Lucas Ferreira"
+                  width="30"
+                />
+              </li>
+            </ul>
+            <button type="submit">Salvar Presenças</button>
+          </form>
+        </div>
+      </section>
+
+      <section id="historico-presenca" aria-labelledby="titulo-historico">
+        <h2 id="titulo-historico">Histórico de Presenças</h2>
+
+        <div id="filtros-historico">
+          <form
+            onsubmit="alert('Funcionalidade em desenvolvimento'); return false;"
+          >
+            <label for="filtro-periodo">Período:</label>
+            <select id="filtro-periodo" name="periodo">
+              <option value="total">Total</option>
+              <option value="mes_atual">Mês Atual</option>
+              <option value="ultimos_3_meses">Últimos 3 meses</option>
+              <option value="ano_atual">Ano Atual</option>
+            </select>
+            <label for="filtro-faixa-hist">Faixa:</label>
+            <select id="filtro-faixa-hist" name="faixa">
+              <option value="">Todas</option>
+              <option value="branca">Branca</option>
+              <option value="azul">Azul</option>
+            </select>
+            <button type="submit">Aplicar Filtros</button>
+          </form>
+        </div>
+
+        <div id="tabela-historico">
+          <h3>Resumo Geral</h3>
+          <table>
+            <thead>
+              <tr>
+                <th>Aluno</th>
+                <th>Presenças</th>
+                <th>Faltas</th>
+                <th>% Frequência</th>
+                <th>Última Presença</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>
+                  <a href="#perfil-aluno" onclick="carregarPerfilAluno(1)"
+                    >João Silva</a
+                  >
+                </td>
+                <td>22</td>
+                <td>4</td>
+                <td>84%</td>
+                <td>28/04/2025</td>
+              </tr>
+              <tr>
+                <td>
+                  <a href="#perfil-aluno" onclick="carregarPerfilAluno(2)"
+                    >Maria Oliveira</a
+                  >
+                </td>
+                <td>10</td>
+                <td>16</td>
+                <td>38%</td>
+                <td>15/04/2025</td>
+              </tr>
+              <tr>
+                <td>
+                  <a href="#perfil-aluno" onclick="carregarPerfilAluno(3)"
+                    >Lucas Ferreira</a
+                  >
+                </td>
+                <td>25</td>
+                <td>1</td>
+                <td>96%</td>
+                <td>30/04/2025</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div id="grafico-presenca">
+          <h3>Gráfico de Presença (Semanal)</h3>
+          <div id="chart-container">
+            <canvas id="presenceChart"></canvas>
+            <p
+              id="chart-error"
+              style="display: none; color: red; text-align: center"
+            >
+              Erro ao carregar o gráfico.
+            </p>
+          </div>
+        </div>
+
+        <div id="exportar-relatorios">
+          <h3>Relatórios</h3>
+          <button
+            id="btn-export-pdf"
+            onclick="alert('Funcionalidade em desenvolvimento')"
+          >
+            Exportar para PDF
+          </button>
+          <button
+            id="btn-export-excel"
+            onclick="alert('Funcionalidade em desenvolvimento')"
+          >
+            Exportar para Excel
+          </button>
+        </div>
+      </section>
+
+      <section id="perfil-aluno" aria-labelledby="titulo-perfil-aluno">
+        <h2 id="titulo-perfil-aluno">Perfil do Aluno</h2>
+        <div id="perfil-aluno-container">
+          <p>
+            <i
+              >Selecione um aluno na lista de presença ou no histórico para ver
+              os detalhes aqui.</i
+            >
+          </p>
+        </div>
+      </section>
+
+      <section id="alertas" aria-labelledby="titulo-alertas">
+        <h2 id="titulo-alertas">Alertas Importantes</h2>
+        <div class="alerta alerta-aviso">
+          <p>
+            ⚠️ Maria Oliveira faltou 5 aulas seguidas. Última presença:
+            15/04/2025.
+          </p>
+        </div>
+        <div class="alerta alerta-sucesso">
+          <p>
+            ✅ João Silva completou 20 presenças desde a última graduação -
+            verificar prontidão para exame.
+          </p>
+        </div>
+        <div class="alerta alerta-info">
+          <p>
+            📉 Frequência geral da turma caiu 12% em Abril comparado a Março.
+          </p>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <p>© 2025 Dojo TC</p>
+    </footer>
+
+    <script>
+      function carregarPerfilAluno(idAluno) {
+        const containerPerfil = document.getElementById(
+          "perfil-aluno-container"
+        );
+        const tituloPerfil = document.getElementById("titulo-perfil-aluno");
+
+        let nomeAluno = "Aluno Desconhecido";
+        let faixa = "Desconhecida";
+        let presencas = 0;
+        let frequencia = "0%";
+        if (idAluno === 1) {
+          nomeAluno = "João Silva";
+          faixa = "Azul";
+          presencas = 22;
+          frequencia = "84%";
+        }
+        if (idAluno === 2) {
+          nomeAluno = "Maria Oliveira";
+          faixa = "Branca";
+          presencas = 10;
+          frequencia = "38%";
+        }
+        if (idAluno === 3) {
+          nomeAluno = "Lucas Ferreira";
+          faixa = "Roxa";
+          presencas = 25;
+          frequencia = "96%";
+        }
+
+        tituloPerfil.textContent = `Perfil do Aluno: ${nomeAluno}`;
+        containerPerfil.innerHTML = `
+          <p><strong>Nome:</strong> ${nomeAluno}</p>
+          <p><strong>Faixa:</strong> ${faixa}</p>
+          <p><strong>Presenças:</strong> ${presencas}</p>
+          <p><strong>Frequência:</strong> ${frequencia}</p>
+          <button onclick="fecharPerfil()">Fechar Perfil</button>
+        `;
+        console.log(`Clicou para ver perfil do aluno ID: ${idAluno}`);
+      }
+
+      function fecharPerfil() {
+        const containerPerfil = document.getElementById(
+          "perfil-aluno-container"
+        );
+        const tituloPerfil = document.getElementById("titulo-perfil-aluno");
+        tituloPerfil.textContent = `Perfil do Aluno`;
+        containerPerfil.innerHTML = `<p><i>Selecione um aluno na lista de presença ou no histórico para ver os detalhes aqui.</i></p>`;
+      }
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.min.js"></script>
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const canvas = document.getElementById("presenceChart");
+        const errorElement = document.getElementById("chart-error");
+        if (!canvas) {
+          console.error("Canvas #presenceChart not found");
+          if (errorElement) errorElement.style.display = "block";
+          return;
+        }
+        const ctx = canvas.getContext("2d");
+
+        new Chart(ctx, {
+          type: "bar",
+          data: {
+            labels: ["Seg", "Ter", "Qua", "Qui", "Sex", "Sáb"],
+            datasets: [
+              {
+                label: "Presenças (Semanal)",
+                data: [20, 18, 22, 15, 25, 10],
+                backgroundColor: "rgba(44, 62, 80, 0.7)",
+                borderColor: "rgba(44, 62, 80, 1)",
+                borderWidth: 1,
+              },
+            ],
+          },
+          options: {
+            responsive: true,
+            maintainAspectRatio: false,
+            scales: {
+              y: {
+                beginAtZero: true,
+                title: { display: true, text: "Número de Presenças" },
+              },
+              x: {
+                title: { display: true, text: "Dia da Semana" },
+              },
+            },
+            plugins: {
+              legend: { display: true, position: "top" },
+            },
+          },
+        });
+      });
+    </script>
+  </body>
+</html>
