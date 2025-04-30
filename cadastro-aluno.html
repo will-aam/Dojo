@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro de Aluno</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/index.css">
+</head>
+<body>
+    <header class="header">
+        <a href="index.html" class="text-white hover:underline">Voltar ao Login</a>
+    </header>
+    <div class="login-container">
+        <h2 class="text-2xl font-bold text-center text-gray-800 mb-6">Cadastro de Aluno</h2>
+        <div id="error-message" class="error-message text-center mb-4">Por favor, preencha todos os campos obrigatórios</div>
+        <div>
+            <div class="mb-4">
+                <label for="nome" class="block text-sm font-medium text-gray-700">Nome Completo *</label>
+                <input type="text" id="nome" placeholder="Digite seu nome completo" class="mt-1 w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500" required>
+            </div>
+            <div class="mb-4">
+                <label for="email" class="block text-sm font-medium text-gray-700">E-mail *</label>
+                <input type="email" id="email" placeholder="Digite seu e-mail" class="mt-1 w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500" required>
+            </div>
+            <div class="mb-4">
+                <label for="matricula" class="block text-sm font-medium text-gray-700">Matrícula *</label>
+                <input type="text" id="matricula" placeholder="Digite sua matrícula" class="mt-1 w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500" required>
+            </div>
+            <div class="mb-4">
+                <label for="telefone" class="block text-sm font-medium text-gray-700">Telefone *</label>
+                <input type="tel" id="telefone" placeholder="Digite seu telefone" class="mt-1 w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500" required>
+            </div>
+            <div class="mb-6">
+                <label for="senha" class="block text-sm font-medium text-gray-700">Senha *</label>
+                <input type="password" id="senha" placeholder="Crie uma senha" class="mt-1 w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500" required>
+            </div>
+            <button onclick="cadastrarAluno()" class="w-full bg-indigo-600 text-white py-2 rounded-lg hover:bg-indigo-700 transition duration-200">Cadastrar</button>
+        </div>
+    </div>
+
+    <script>
+        function cadastrarAluno() {
+            const nome = document.getElementById('nome').value;
+            const email = document.getElementById('email').value;
+            const matricula = document.getElementById('matricula').value;
+            const telefone = document.getElementById('telefone').value;
+            const senha = document.getElementById('senha').value;
+            const errorMessage = document.getElementById('error-message');
+
+            if (nome && email && matricula && telefone && senha) {
+                errorMessage.style.display = 'none';
+                alert("Cadastro realizado com sucesso!");
+                // Aqui você pode integrar com um backend para salvar os dados
+                // window.location.href = 'index.html';
+            } else {
+                errorMessage.style.display = 'block';
+            }
+        }
+
+        // Cadastro com Enter
+        document.getElementById('senha').addEventListener('keypress', function(event) {
+            if (event.key === 'Enter') cadastrarAluno();
+        });
+    </script>
+</body>
+</html>
