@@ -18,8 +18,7 @@ function login() {
 
   if (username === "professor" && password === "senha123") {
     errorMessage.style.display = "none";
-    alert("Login bem-sucedido!");
-    // window.location.href = 'dashboard.html';
+    window.location.href = "professor.html";
   } else {
     errorMessage.style.display = "block";
   }
