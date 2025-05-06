@@ -130,3 +130,7 @@ body {
 .social-media-buttons a:hover {
   color: #4ade80; /* hover mais claro (semelhante a text-green-400) */
 }
+
+input[aria-invalid="true"] {
+  border-color: red;
+}
