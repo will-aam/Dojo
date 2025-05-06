@@ -11,49 +11,81 @@
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
-      integrity="sha512-..."
+      integrity="sha512-Avb2QiuDEEvB4bZJYdft2mNjVShBftLdPG8FJ0V7irTLQ8Uo0qcPxh4Plq7G5tGM0rU+8Jn4g+Wt3T8aG6G+7g=="
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     />
-
+    <link rel="manifest" href="imagens/site.webmanifest" />
+    <link rel="icon" href="imagens/favicon.ico" type="image/x-icon" />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="imagens/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="imagens/favicon-16x16.png"
+    />
+    <link rel="apple-touch-icon" href="imagens/apple-touch-icon.png" />
     <link rel="stylesheet" href="styles/index.css" />
   </head>
   <body>
     <div class="login-container">
-      <h2 class="text-2xl font-bold text-center text-gray-800 mb-6">
+      <h1 class="text-2xl font-bold text-center text-gray-800 mb-6">
         Login do Aluno
-      </h2>
-      <div id="error-message" class="error-message hidden text-center mb-4">
+      </h1>
+      <div
+        id="error-message"
+        role="alert"
+        class="error-message hidden text-center mb-4"
+      >
         Usuário ou senha incorretos
       </div>
-
-      <div>
-        <div class="mb-4">
-          <label for="username" class="block text-sm font-medium text-gray-700"
-            >Usuário:</label
-          >
-          <input
-            type="text"
-            id="username"
-            placeholder="Digite seu usuário"
-            class="mt-1 w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500"
-          />
+      <form id="loginForm">
+        <div>
+          <div class="mb-4">
+            <label
+              for="username"
+              class="block text-sm font-medium text-gray-700"
+              >Usuário:</label
+            >
+            <input
+              type="text"
+              id="username"
+              name="username"
+              placeholder="Digite seu usuário"
+              class="mt-1 w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500"
+              required
+              autocomplete="username"
+              aria-invalid="false"
+              aria-describedby="error-message"
+            />
+          </div>
+          <div class="mb-6">
+            <label
+              for="password"
+              class="block text-sm font-medium text-gray-700"
+              >Senha:</label
+            >
+            <input
+              type="password"
+              id="password"
+              name="password"
+              placeholder="Digite sua senha"
+              class="mt-1 w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500"
+              required
+              autocomplete="current-password"
+              aria-invalid="false"
+              aria-describedby="error-message"
+            />
+          </div>
+          <button type="submit" class="enter">Entrar</button>
         </div>
-        <div class="mb-6">
-          <label for="password" class="block text-sm font-medium text-gray-700"
-            >Senha:</label
-          >
-          <input
-            type="password"
-            id="password"
-            placeholder="Digite sua senha"
-            class="mt-1 w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500"
-          />
-        </div>
-        <button onclick="login()" class="enter">Entrar</button>
-      </div>
-      <br />
-      <div id="Cadastro" class="text-center mb-4">
+      </form>
+      <div id="Cadastro" class="text-center mt-4">
         <a
           href="cadastro-aluno.html"
           class="text-blue-600 font-semibold hover:underline"
@@ -61,13 +93,10 @@
           Cadastro
         </a>
       </div>
-      <a href="aluno.html">Teste</a>
-      <footer class="footer">
-        <div id="footer_items">
-          <span id="copyright"> © 2025 DOJO THIAGO CHEIROSO</span>
-          <br />
-
-          <div class="social-media-buttons">
+      <footer class="footer mt-8">
+        <div id="footer_items" class="text-center">
+          <span id="copyright">© 2025 DOJO THIAGO CHEIROSO</span>
+          <div class="social-media-buttons mt-2">
             <a
               href="https://api.whatsapp.com/send?phone=5579999227222&fbclid=PAQ0xDSwJ_FxFleHRuA2FlbQIxMQABpzBI6Uj0P6qa_xKmwG3nhfJC5SoT0p8AWQ6i46v-yvQ1cqQPupGpKiVoO8yF_aem_AO6vq3Fc3s47zBnQ5JRqKg"
               aria-label="Abrir WhatsApp"
