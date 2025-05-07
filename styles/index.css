@@ -104,33 +104,37 @@ body {
 }
 .footer {
   color: black;
-  padding: 1.5rem 1rem;
+  padding: 1rem;
+  background-color: rgba(255, 255, 255, 0.9);
+  border-radius: 0.5rem;
+  text-align: center;
 }
-
 #footer_items {
-  max-width: 1200px;
-  margin: 0 auto;
   display: flex;
-  justify-content: space-between;
+  flex-direction: column;
   align-items: center;
-  flex-wrap: wrap;
-  gap: 1rem;
+  gap: 0.5rem;
 }
-
 #copyright {
-  font-size: 0.875rem; /* 14px */
+  font-size: 0.875rem;
+  font-weight: 500;
 }
-
+.social-media-buttons {
+  display: flex;
+  justify-content: center;
+}
 .social-media-buttons a {
-  color: #22c55e; /* verde estilo WhatsApp (semelhante a text-green-500) */
-  font-size: 1.5rem; /* 24px */
-  transition: color 0.2s ease-in-out;
+  display: inline-block;
+  text-decoration: none;
 }
-
-.social-media-buttons a:hover {
-  color: #4ade80; /* hover mais claro (semelhante a text-green-400) */
+.social-media-buttons .whatsapp-icon {
+  width: 24px;
+  height: 24px;
+  transition: opacity 0.2s ease-in-out;
 }
-
+.social-media-buttons .whatsapp-icon:hover {
+  opacity: 0.8;
+}
 input[aria-invalid="true"] {
   border-color: red;
 }
