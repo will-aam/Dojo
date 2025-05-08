@@ -60,6 +60,10 @@ body {
   flex-direction: column;
 }
 
+.address-group {
+  gap: 0.5rem;
+}
+
 .label {
   font-size: 0.875rem;
   color: #555;
