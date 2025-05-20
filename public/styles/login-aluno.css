@@ -1,0 +1,199 @@
+body {
+  background: #f8fafc;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+  font-family: "Inter", sans-serif;
+}
+
+.login-container {
+  background: #ffffff;
+  padding: clamp(1rem, 5vw, 1.25rem);
+  border-radius: 0.75rem;
+  width: min(90%, 360px);
+  box-sizing: border-box;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+.login-container h1 {
+  font-size: clamp(1.25rem, 5.5vw, 1.75rem);
+  font-weight: 600;
+  text-align: center;
+  color: #1f2937;
+  margin-bottom: clamp(1rem, 4vw, 1.5rem);
+}
+
+.error-message,
+#error-message.hidden {
+  color: #dc2626 !important;
+  font-size: clamp(0.75rem, 3.5vw, 0.875rem);
+  text-align: center;
+  margin-bottom: clamp(0.75rem, 3vw, 1rem);
+  display: none;
+}
+
+#error-message:not(.hidden) {
+  display: block !important;
+}
+
+form input {
+  width: 100%;
+  padding: clamp(0.5rem, 2.5vw, 0.625rem);
+  border: 1px solid #d1d5db;
+  border-radius: 0.5rem;
+  font-size: clamp(0.875rem, 4vw, 1rem);
+  outline: none;
+  box-sizing: border-box;
+  background: #f9fafb;
+  transition: border-color 0.2s ease;
+}
+
+form input:focus {
+  border-color: #4b5563;
+  box-shadow: 0 0 0 2px rgba(75, 85, 99, 0.2);
+}
+
+form input[aria-invalid="true"] {
+  border-color: #dc2626 !important;
+}
+
+form label {
+  display: block;
+  font-size: clamp(0.75rem, 3.5vw, 0.875rem);
+  color: #1f2937;
+  margin-bottom: 0.375rem;
+  font-weight: 500;
+}
+
+form button {
+  width: 100%;
+  background: #1f2937 !important;
+  color: #ffffff !important;
+  padding: clamp(0.5rem, 2.5vw, 0.625rem);
+  border: none;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  font-size: clamp(0.875rem, 4vw, 1rem);
+  font-weight: 500;
+  transition: background-color 0.2s ease;
+}
+
+form button:hover {
+  background: #374151 !important;
+}
+
+#Cadastro a {
+  color: #4b5563 !important;
+  font-size: clamp(0.875rem, 4vw, 1rem);
+  text-decoration: none;
+  font-weight: 500;
+  display: inline-block;
+  margin-top: 1rem;
+}
+
+#Cadastro a:hover {
+  color: #1f2937 !important;
+  text-decoration: underline !important;
+}
+
+.footer {
+  width: 100%;
+  max-width: min(90%, 360px);
+  padding: clamp(0.5rem, 2vw, 0.75rem);
+  text-align: center;
+  margin: clamp(1rem, 4vw, 1.25rem) auto 0;
+  background: transparent;
+}
+
+.footer-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: clamp(0.5rem, 2vw, 0.75rem);
+  width: 100%;
+}
+
+.copyright {
+  font-size: clamp(0.7rem, 3vw, 0.8125rem);
+  color: #6b7280;
+  font-weight: 400;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  text-align: center;
+}
+
+.social-media {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: clamp(0.75rem, 3vw, 1rem);
+}
+
+.social-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: clamp(32px, 8vw, 36px);
+  height: clamp(32px, 8vw, 36px);
+  border-radius: 50%;
+  background: #f1f5f9;
+  transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.social-link:hover {
+  background: #e5e7eb;
+  transform: translateY(-2px);
+}
+
+.social-icon.whatsapp-icon {
+  width: clamp(20px, 5vw, 24px);
+  height: clamp(20px, 5vw, 24px);
+}
+
+@media (max-width: 768px) {
+  .login-container {
+    width: min(90%, 320px);
+    padding: clamp(0.75rem, 4vw, 1rem);
+  }
+
+  form input,
+  form button,
+  #Cadastro a {
+    font-size: clamp(0.8rem, 3.8vw, 0.95rem);
+  }
+
+  .footer {
+    max-width: min(90%, 320px);
+    padding: clamp(0.5rem, 2vw, 0.625rem);
+  }
+}
+
+@media (max-width: 480px) {
+  .login-container {
+    width: min(90%, 280px);
+    padding: clamp(0.5rem, 3.5vw, 0.75rem);
+  }
+
+  .login-container h1 {
+    font-size: clamp(1.125rem, 5vw, 1.5rem);
+  }
+
+  form label,
+  .copyright {
+    font-size: clamp(0.65rem, 3vw, 0.75rem);
+  }
+
+  .social-link {
+    width: clamp(28px, 7vw, 32px);
+    height: clamp(28px, 7vw, 32px);
+  }
+
+  .social-icon.whatsapp-icon {
+    width: clamp(18px, 4.5vw, 22px);
+    height: clamp(18px, 4.5vw, 22px);
+  }
+}
