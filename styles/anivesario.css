@@ -1,0 +1,123 @@
+/* Estilos para o cabeçalho da página */
+.cabecalho-pagina {
+  padding: 1rem;
+  margin-bottom: 1.5rem;
+  background-color: var(--cor-elemento);
+  border-radius: 6px;
+  border: 1px solid var(--cor-borda);
+  text-align: center;
+}
+
+.cabecalho-pagina h1 {
+  margin: 0 0 0.5rem 0;
+  color: var(--cor-primaria);
+}
+
+.cabecalho-pagina p {
+  margin: 0;
+  color: var(--cor-texto-secundario);
+  font-size: 1rem;
+}
+
+/* Container principal da lista de meses */
+#container-aniversarios {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+}
+
+/* Card de cada mês */
+.card-mes {
+  background-color: var(--cor-elemento);
+  border: 1px solid var(--cor-borda);
+  border-radius: 8px;
+  overflow: hidden;
+  transition: box-shadow 0.2s, border-color 0.2s;
+}
+
+/* Destaque para o mês atual */
+.card-mes.mes-atual {
+  border-left: 5px solid var(--cor-primaria);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+body.dark-mode .card-mes.mes-atual {
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+.card-mes-header {
+  padding: 0.75rem 1rem;
+  font-size: 1.2rem;
+  font-weight: 600;
+  background-color: var(--cor-fundo);
+  border-bottom: 1px solid var(--cor-borda);
+}
+
+/* Lista de aniversariantes dentro do card */
+.lista-aniversariantes {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.item-aniversariante {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 0.75rem 1rem;
+  border-bottom: 1px solid var(--cor-borda);
+}
+
+.item-aniversariante:last-child {
+  border-bottom: none;
+}
+
+.item-aniversariante .emoji {
+  font-size: 1.5rem;
+}
+
+.item-aniversariante .nome {
+  flex-grow: 1;
+  font-weight: 500;
+}
+
+.item-aniversariante .data {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--cor-texto-secundario);
+  background-color: var(--cor-fundo);
+  padding: 4px 8px;
+  border-radius: 4px;
+}
+
+/* Destaque para o próximo aniversariante */
+.item-aniversariante.proximo-aniversario {
+  background-color: #e7f3ff;
+}
+.item-aniversariante.proximo-aniversario .nome {
+  color: var(--cor-primaria);
+  font-weight: bold;
+}
+body.dark-mode .item-aniversariante.proximo-aniversario {
+  background-color: rgba(46, 137, 255, 0.1);
+}
+
+.mensagem-vazia {
+  padding: 1rem;
+  text-align: center;
+  color: var(--cor-texto-secundario);
+  font-style: italic;
+}
+
+/* Responsividade */
+@media (min-width: 768px) {
+  #container-aniversarios {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  #container-aniversarios {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}

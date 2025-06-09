@@ -1,0 +1,170 @@
+/* CABEÇALHO DA PÁGINA DE CHAMADA */
+.cabecalho-pagina {
+  padding: 1rem;
+  margin-bottom: 1.5rem;
+  background-color: var(--cor-elemento);
+  border-radius: 6px;
+  border: 1px solid var(--cor-borda);
+  text-align: center;
+}
+
+.cabecalho-pagina h1 {
+  margin: 0 0 0.5rem 0;
+  color: var(--cor-primaria);
+}
+
+.cabecalho-pagina p {
+  margin: 0;
+  color: var(--cor-texto-secundario);
+  font-size: 1rem;
+}
+
+/* SELETOR DE DIA */
+.seletor-dia {
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+}
+
+.seletor-dia button {
+  padding: 0.5rem 1rem;
+  border: 1px solid var(--cor-borda);
+  background-color: var(--cor-elemento);
+  color: var(--cor-texto-secundario);
+  border-radius: 20px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+}
+
+.seletor-dia button:hover {
+  background-color: var(--cor-borda);
+}
+
+.seletor-dia button.active {
+  background-color: var(--cor-primaria);
+  color: white;
+  border-color: var(--cor-primaria);
+}
+
+/* CARD DE TURMA */
+.card-turma {
+  background-color: var(--cor-elemento);
+  border: 1px solid var(--cor-borda);
+  border-radius: 8px;
+  margin-bottom: 1.5rem;
+  overflow: hidden;
+}
+
+.card-turma-header {
+  background-color: var(--cor-fundo);
+  padding: 0.75rem 1rem;
+  font-size: 1.2rem;
+  font-weight: 600;
+  border-bottom: 1px solid var(--cor-borda);
+}
+
+.form-chamada {
+  padding: 1rem;
+}
+
+.lista-alunos-chamada {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  max-height: 400px;
+  overflow-y: auto;
+}
+
+.item-aluno-chamada {
+  display: flex;
+  align-items: center;
+  padding: 0.75rem 0.5rem;
+  border-bottom: 1px solid var(--cor-borda);
+  transition: background-color 0.2s;
+}
+
+.item-aluno-chamada:last-child {
+  border-bottom: none;
+}
+
+.item-aluno-chamada:hover {
+  background-color: var(--cor-fundo);
+}
+
+.item-aluno-chamada input[type="checkbox"] {
+  width: 1.2rem;
+  height: 1.2rem;
+  margin-right: 1rem;
+  flex-shrink: 0;
+  accent-color: var(--cor-primaria);
+}
+
+.item-aluno-chamada label {
+  cursor: pointer;
+  flex-grow: 1;
+}
+
+.item-aluno-chamada input:checked + label {
+  text-decoration: line-through;
+  color: var(--cor-texto-secundario);
+}
+
+.card-turma .btn-salvar-chamada {
+  width: 100%;
+  margin-top: 1rem;
+  padding: 0.75rem;
+  background-color: var(--cor-verde);
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+}
+/* ADICIONE ESTES ESTILOS AO FINAL DO SEU ARQUIVO chamada.css */
+
+/* Ajustes no cabeçalho do card para ser clicável */
+.card-turma-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+}
+
+.total-alunos {
+  font-size: 0.9rem;
+  font-weight: 400;
+  color: var(--cor-texto-secundario);
+  margin-left: 1rem;
+}
+
+.btn-toggle-chamada {
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  color: var(--cor-texto-secundario);
+  transition: transform 0.3s ease-in-out;
+}
+
+/* Corpo da chamada (a parte que será escondida/mostrada) */
+.chamada-corpo {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.4s ease-in-out, padding 0.4s ease-in-out;
+  padding: 0 1rem; /* Zera o padding vertical quando fechado */
+}
+
+/* Quando o card estiver aberto, o corpo se expande */
+.card-turma.aberto .chamada-corpo {
+  max-height: 600px; /* Altura suficiente para a lista */
+  padding: 1rem;
+  border-top: 1px solid var(--cor-borda);
+}
+
+/* Gira o ícone de seta quando o card está aberto */
+.card-turma.aberto .btn-toggle-chamada {
+  transform: rotate(180deg);
+}

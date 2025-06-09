@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login do Aluno</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="/styles/login-aluno.css" />
+  </head>
+  <body>
+    <div class="login-container">
+      <a href="aluno.html">
+        <h1 class="text-2xl font-bold text-center text-gray-800 mb-6">
+          Login do Aluno
+        </h1></a
+      >
+      <div
+        id="error-message"
+        role="alert"
+        class="error-message hidden text-center mb-4 text-red-600"
+      >
+        Usuário ou senha incorretos
+      </div>
+      <form id="loginForm">
+        <div>
+          <div class="mb-4">
+            <label
+              for="username"
+              class="block text-sm font-medium text-gray-700"
+              >Usuário:</label
+            >
+            <input
+              type="text"
+              id="username"
+              name="username"
+              placeholder="Digite seu CPF"
+              class="mt-1 w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500"
+              required
+              autocomplete="username"
+              aria-invalid="false"
+              aria-describedby="error-message"
+            />
+          </div>
+          <div class="mb-6">
+            <label
+              for="password"
+              class="block text-sm font-medium text-gray-700"
+              >Senha:</label
+            >
+            <input
+              type="password"
+              id="password"
+              name="password"
+              placeholder="Digite sua senha"
+              class="mt-1 w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500"
+              required
+              autocomplete="current-password"
+              aria-invalid="false"
+              aria-describedby="error-message"
+            />
+          </div>
+          <button
+            type="submit"
+            class="w-full bg-indigo-600 text-white py-2 rounded-lg hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500"
+          >
+            Entrar
+          </button>
+        </div>
+      </form>
+      <div id="Cadastro" class="text-center mt-4">
+        <a
+          href="cadastro-aluno.html"
+          class="text-blue-600 font-semibold hover:underline"
+        >
+          Cadastro
+        </a>
+      </div>
+      <!-- <footer class="footer">
+        <div class="footer-content">
+          <p class="copyright">© Dojo Thiago Cheiroso</p>
+          <div class="social-media">
+            <a
+              href="https://api.whatsapp.com/send?phone=5579999227222"
+              aria-label="WhatsApp"
+              class="social-link"
+            >
+              <img
+                src="imagens/whatsapp-ico.png"
+                alt="Ícone do WhatsApp"
+                class="social-icon whatsapp-icon"
+              />
+            </a>
+          </div>
+        </div>
+      </footer> -->
+    </div>
+
+    <script src="javascript/index-aluno.js"></script>
+  </body>
+</html>

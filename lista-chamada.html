@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Lista de Chamada - Dojo TC</title>
+    <link rel="stylesheet" href="/styles/painel.css" />
+    <link rel="stylesheet" href="/styles/chamada.css" />
+  </head>
+  <body>
+    <header class="cabecalho">
+      <div class="logo">Dojo TC</div>
+      <nav class="navegacao">
+        <a href="painel.html">Painel</a>
+        <a href="lista-chamada.html">Lista de Chamada</a>
+        <a href="aniversarios.html">Aniversários</a>
+        <button id="btn-tema" class="btn-icone">🌙</button>
+      </nav>
+    </header>
+
+    <main class="container-principal">
+      <header class="cabecalho-pagina">
+        <h1>Lista de Chamada</h1>
+        <p id="data-atual"></p>
+      </header>
+
+      <section class="seletor-dia">
+        <button data-dia="1">Segunda</button>
+        <button data-dia="2">Terça</button>
+        <button data-dia="3">Quarta</button>
+        <button data-dia="4">Quinta</button>
+        <button data-dia="5">Sexta</button>
+        <button data-dia="6">Sábado</button>
+      </section>
+
+      <section id="container-chamada"></section>
+    </main>
+
+    <div id="notificacao-bar" class="notificacao-bar"></div>
+
+    <script src="/javascript/chamada.js"></script>
+  </body>
+</html>

@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Painel do Professor</title>
+    <link rel="stylesheet" href="/styles/painel.css" />
+  </head>
+  <body>
+    <header class="cabecalho">
+      <div class="logo">Dojo TC</div>
+      <nav class="navegacao">
+        <a href="lista-chamada.html">Lista de Chamada</a>
+        <a href="aniversarios.html">Aniversários</a>
+        <button id="btn-tema" class="btn-icone">🌙</button>
+      </nav>
+    </header>
+
+    <main class="container-principal">
+      <section id="resumo-estatistico" class="resumo-grid">
+        <div class="card-stat">
+          <p>Total de Alunos</p>
+          <h2 id="stat-total-alunos">0</h2>
+        </div>
+        <div class="card-stat">
+          <p>Pagamentos OK</p>
+          <h2 id="stat-pagos">0</h2>
+        </div>
+        <div class="card-stat">
+          <p>Pendentes</p>
+          <h2 id="stat-pendentes">0</h2>
+        </div>
+        <div class="card-stat">
+          <p>Aniversariantes (Mês)</p>
+          <h2 id="stat-aniversarios">0</h2>
+        </div>
+      </section>
+
+      <section class="controles-lista">
+        <div class="campo-busca">
+          <input
+            type="text"
+            id="busca-aluno"
+            placeholder="🔍 Buscar por nome..."
+          />
+        </div>
+        <div class="filtros">
+          <select id="filtro-modalidade">
+            <option value="todos">Todas Modalidades</option>
+            <option value="Jiu-Jitsu">Jiu-Jitsu</option>
+            <option value="Muay Thai">Muay Thai</option>
+            <option value="Misto">Misto</option>
+          </select>
+          <select id="filtro-pagamento">
+            <option value="todos">Todos Pagamentos</option>
+            <option value="pago">✅ Pago</option>
+            <option value="pendente">❌ Pendente</option>
+          </select>
+        </div>
+      </section>
+
+      <section id="lista-alunos-container">
+        <ul id="lista-alunos"></ul>
+      </section>
+    </main>
+
+    <div id="modal-aluno" class="overlay">
+      <div class="modal">
+        <button class="modal-fechar">&times;</button>
+        <h3 id="modal-titulo">Adicionar Novo Aluno</h3>
+        <form id="form-aluno">
+          <input type="hidden" id="aluno-id" />
+          <input
+            type="text"
+            id="aluno-nome"
+            placeholder="Nome Completo"
+            required
+          />
+          <input type="email" id="aluno-email" placeholder="E-mail" required />
+          <input type="text" id="aluno-telefone" placeholder="Telefone" />
+          <input type="date" id="aluno-nascimento" required />
+          <select id="aluno-modalidade" required>
+            <option value="Jiu-Jitsu">Jiu-Jitsu</option>
+            <option value="Muay Thai">Muay Thai</option>
+            <option value="Misto">Misto</option>
+          </select>
+          <select id="aluno-pagamento" required>
+            <option value="pago">✅ Pago</option>
+            <option value="pendente">❌ Pendente</option>
+          </select>
+          <button type="submit">Salvar</button>
+        </form>
+      </div>
+    </div>
+
+    <div id="modal-excluir" class="overlay">
+      <div class="modal">
+        <button class="modal-fechar">&times;</button>
+        <h3>Confirmar Exclusão</h3>
+        <p>
+          Deseja realmente remover <strong id="nome-aluno-excluir"></strong>? A
+          ação não pode ser desfeita.
+        </p>
+        <form id="form-excluir">
+          <input
+            type="password"
+            id="senha-professor"
+            placeholder="Sua senha de professor"
+            required
+          />
+          <div class="botoes-confirmacao">
+            <button type="button" class="btn-cancelar">Cancelar</button>
+            <button type="submit" class="btn-confirmar">Excluir</button>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <div class="acoes-flutuantes">
+      <button id="btn-adicionar-aluno" class="btn-acao-principal">➕</button>
+    </div>
+
+    <script src="/javascript/painel.js"></script>
+  </body>
+</html>

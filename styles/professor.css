@@ -1,0 +1,403 @@
+/* style.css */
+
+/* 1. VARIÁVEIS DE CORES E FONTES */
+@import url("https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap");
+
+:root {
+  --cor-fundo-principal: #111827; /* Cinza Escuro Frio */
+  --cor-fundo-elemento: #1f2937; /* Cinza Escuro Secundário */
+  --cor-borda: #374151; /* Cinza Médio */
+
+  --cor-texto-principal: #f9fafb; /* Branco Suave */
+  --cor-texto-secundario: #9ca3af; /* Cinza Claro */
+  --cor-destaque: #f59e0b; /* Âmbar/Dourado para destaque */
+
+  --cor-sucesso: #10b981; /* Verde Esmeralda */
+  --cor-sucesso-fundo: rgba(16, 185, 129, 0.1);
+  --cor-erro: #ef4444; /* Vermelho */
+  --cor-erro-fundo: rgba(239, 68, 68, 0.1);
+
+  --fonte-principal: "Nunito", sans-serif;
+  --sombra-card: 0 4px 6px rgba(0, 0, 0, 0.2);
+  --raio-borda: 8px;
+}
+
+/* 2. ESTILOS GERAIS E RESET */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--fonte-principal);
+  background-color: var(--cor-fundo-principal);
+  color: var(--cor-texto-principal);
+  line-height: 1.6;
+}
+
+main {
+  padding: 1rem;
+}
+
+h1,
+h2,
+h3 {
+  color: var(--cor-texto-principal);
+  font-weight: 700;
+}
+
+h2 {
+  margin-bottom: 1rem;
+  font-size: 1.5rem;
+}
+
+a {
+  color: var(--cor-destaque);
+  text-decoration: none;
+}
+
+/* 3. CABEÇALHO E NAVEGAÇÃO */
+header {
+  background-color: var(--cor-fundo-elemento);
+  padding: 1rem;
+  border-bottom: 1px solid var(--cor-borda);
+}
+
+.header-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+header h1 {
+  font-size: 1.2rem;
+}
+
+header nav ul {
+  list-style: none;
+  display: flex;
+  gap: 1rem;
+}
+
+header nav a {
+  font-weight: 600;
+  transition: color 0.2s ease;
+}
+
+header nav a:hover {
+  color: var(--cor-texto-principal);
+}
+
+/* 4. CONTROLES (FILTRO E ORDENAÇÃO) */
+.controles-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  background-color: var(--cor-fundo-elemento);
+  border-radius: var(--raio-borda);
+  margin-bottom: 1.5rem;
+}
+
+.filtro-item {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.filtro-item label {
+  cursor: pointer;
+}
+
+.botao-ordenar {
+  background-color: var(--cor-destaque);
+  color: var(--cor-fundo-principal);
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: var(--raio-borda);
+  font-weight: 700;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.botao-ordenar:hover {
+  background-color: #ffb53a;
+}
+
+/* 5. LISTA DE ALUNOS E ITENS */
+.lista-alunos-container ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.aluno-item {
+  background-color: var(--cor-fundo-elemento);
+  border-radius: var(--raio-borda);
+  border: 1px solid var(--cor-borda);
+  overflow: hidden; /* Importante para a transição do painel */
+  transition: all 0.3s ease;
+}
+
+.aluno-header {
+  padding: 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+}
+
+.aluno-nome {
+  font-weight: 600;
+  font-size: 1.1rem;
+}
+
+.status-pagamento {
+  padding: 0.25rem 0.75rem;
+  border-radius: 999px; /* Pill shape */
+  font-size: 0.8rem;
+  font-weight: 700;
+}
+
+.status-pagamento.pago {
+  background-color: var(--cor-sucesso-fundo);
+  color: var(--cor-sucesso);
+}
+
+.status-pagamento.nao-pago {
+  background-color: var(--cor-erro-fundo);
+  color: var(--cor-erro);
+}
+
+/* 6. PAINEL DE DETALHES EXPANSÍVEL */
+.aluno-detalhes {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.5s cubic-bezier(0.25, 0.8, 0.25, 1);
+  background-color: rgba(0, 0, 0, 0.2);
+}
+
+.aluno-detalhes.expandido {
+  max-height: 500px; /* Altura suficiente para o conteúdo */
+  padding: 1rem;
+  border-top: 1px solid var(--cor-borda);
+}
+
+.info-grid {
+  display: grid;
+  grid-template-columns: 1fr; /* Uma coluna em mobile */
+  gap: 0.75rem;
+}
+
+.info-item p {
+  margin: 0;
+  color: var(--cor-texto-secundario);
+}
+
+.info-item strong {
+  color: var(--cor-texto-principal);
+}
+
+.aluno-acoes {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1.5rem;
+  justify-content: flex-end;
+}
+
+.acao-btn {
+  background: none;
+  border: 1px solid var(--cor-borda);
+  color: var(--cor-texto-secundario);
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+}
+
+.acao-btn:hover {
+  border-color: var(--cor-destaque);
+  color: var(--cor-destaque);
+}
+.acao-btn.salvar {
+  color: var(--cor-sucesso);
+  border-color: var(--cor-sucesso);
+}
+.acao-btn.excluir {
+  color: var(--cor-erro);
+  border-color: var(--cor-erro);
+}
+
+/* 7. MODAL E POP-UP */
+.modal-overlay,
+.popup-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
+  z-index: 1000;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.modal-overlay.visivel,
+.popup-overlay.visivel {
+  opacity: 1;
+  visibility: visible;
+}
+
+.modal-conteudo,
+.popup-conteudo {
+  background-color: var(--cor-fundo-elemento);
+  padding: 2rem;
+  border-radius: var(--raio-borda);
+  box-shadow: var(--sombra-card);
+  width: 100%;
+  max-width: 400px;
+  text-align: center;
+  position: relative;
+  transform: scale(0.95);
+  transition: transform 0.3s ease;
+}
+
+.modal-overlay.visivel .modal-conteudo,
+.popup-overlay.visivel .popup-conteudo {
+  transform: scale(1);
+}
+
+.modal-conteudo h3,
+.popup-conteudo h3 {
+  margin-bottom: 1rem;
+  font-size: 1.3rem;
+}
+
+/* Modal de Exclusão */
+#form-confirmar-exclusao {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+#senha-professor {
+  padding: 0.75rem;
+  background-color: var(--cor-fundo-principal);
+  border: 1px solid var(--cor-borda);
+  border-radius: var(--raio-borda);
+  color: var(--cor-texto-principal);
+  text-align: center;
+}
+.modal-botoes {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.botao-cancelar,
+.botao-confirmar {
+  flex: 1;
+  padding: 0.75rem;
+  border: none;
+  border-radius: var(--raio-borda);
+  font-weight: 700;
+  cursor: pointer;
+  transition: opacity 0.2s ease;
+}
+
+.botao-cancelar {
+  background-color: var(--cor-borda);
+  color: var(--cor-texto-principal);
+}
+.botao-confirmar {
+  background-color: var(--cor-erro);
+  color: var(--cor-texto-principal);
+}
+
+.botao-cancelar:hover,
+.botao-confirmar:hover {
+  opacity: 0.8;
+}
+
+/* Pop-up de Aniversário */
+.popup-fechar {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  color: var(--cor-texto-secundario);
+  cursor: pointer;
+}
+
+.popup-conteudo 🎂 {
+  /* Emoji */
+  font-size: 3rem;
+  display: block;
+  margin-bottom: 1rem;
+}
+
+/* 8. FOOTER */
+footer {
+  text-align: center;
+  padding: 1.5rem;
+  margin-top: 2rem;
+  color: var(--cor-texto-secundario);
+  font-size: 0.9rem;
+  border-top: 1px solid var(--cor-borda);
+}
+
+/* 9. RESPONSIVIDADE */
+@media (min-width: 768px) {
+  main {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 2rem;
+  }
+
+  header h1 {
+    font-size: 1.5rem;
+  }
+
+  .info-grid {
+    grid-template-columns: 1fr 1fr; /* Duas colunas em telas maiores */
+    gap: 1rem 2rem;
+  }
+}
+/* ESTILO PARA A NOVA NOTIFICAÇÃO DISCRETA */
+.notificacao-bar {
+  visibility: hidden; /* Começa escondida */
+  opacity: 0;
+  position: fixed; /* Fixa na tela */
+  z-index: 1000;
+  bottom: -100px; /* Começa fora da tela, abaixo */
+  left: 50%;
+  transform: translateX(-50%); /* Centraliza horizontalmente */
+
+  background-color: #2a374a; /* Cor de fundo escura */
+  color: #f9fafb; /* Texto claro */
+  padding: 12px 24px;
+  border-radius: 8px;
+  border: 1px solid #374151;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+
+  transition: all 0.5s cubic-bezier(0.68, -0.55, 0.27, 1.55); /* Animação de entrada e saída */
+}
+
+/* Classe que o JavaScript vai adicionar para mostrar a notificação */
+.notificacao-bar.visivel {
+  visibility: visible;
+  opacity: 1;
+  bottom: 20px; /* Desliza para cima, para dentro da tela */
+}

@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Área do Aluno - Dojo TC</title>
+    <link rel="stylesheet" href="/styles/aluno.css" />
+  </head>
+  <body>
+    <header>
+      <h1>Área do Aluno</h1>
+    </header>
+
+    <main>
+      <!-- Perfil do Aluno -->
+      <section id="perfil-aluno" aria-labelledby="titulo-perfil">
+        <h2 id="titulo-perfil">Bem-vindo(a)!</h2>
+        <div class="perfil-aluno">
+          <img src="perfil.jpg" alt="Foto do Aluno" />
+          <div>
+            <p><strong>João Silva 🥋</strong></p>
+            <p>Faixa Azul</p>
+            <p><strong>Aniversário:</strong> 15/03/1995</p>
+            <p><strong>Endereço:</strong> Rua das Flores, 123, Salvador, BA</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Status de Pagamento e Ações -->
+      <section id="pagamento" aria-labelledby="titulo-pagamento">
+        <h2 id="titulo-pagamento">Mensalidade</h2>
+        <p>
+          <strong>Status:</strong>
+          <span class="status-pagamento pendente">Pendente</span>
+        </p>
+        <p><strong>Vencimento:</strong> 10/05/2025</p>
+        <div class="botoes-acoes">
+          <a
+            href="https://www.mercadopago.com.br/cobrar"
+            class="btn-pagar"
+            target="_blank"
+            >Pagar via Pix</a
+          >
+          <a
+            href="https://api.whatsapp.com/send?phone=5579999227222&text=Oi%20Mestre,%20tenho%20uma%20d%C3%BAvida%20sobre%20o%20treino!"
+            class="btn-whatsapp"
+            target="_blank"
+            >Falar com o Mestre</a
+          >
+          <a
+            href="https://api.whatsapp.com/sendhwkejvfaker6"
+            class="btn-grupo"
+            id="link-grupo"
+            target="_blank"
+            style="display: none"
+            >Entrar no Grupo do WhatsApp</a
+          >
+          <a href="atualizar-cadastro.html" class="btn-atualizar"
+            >Atualizar Cadastro</a
+          >
+        </div>
+      </section>
+
+      <!-- Histórico de Presenças -->
+      <section id="historico-presencas" aria-labelledby="titulo-historico">
+        <h2 id="titulo-historico">Histórico de Presenças</h2>
+        <div class="historico-presencas">
+          <ul>
+            <li>25/04/2025 ✅</li>
+            <li>22/04/2025 ✅</li>
+            <li>18/04/2025 ✅</li>
+            <li>16/04/2025 ❌ (faltou)</li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- Progresso para Próxima Faixa -->
+      <section id="progresso-faixa" aria-labelledby="titulo-progresso">
+        <h2 id="titulo-progresso">Progresso para Próxima Faixa</h2>
+        <p><strong>Faixa Atual:</strong> Azul</p>
+        <p><strong>Aulas até próxima graduação:</strong> 12/30</p>
+        <progress value="12" max="30"></progress>
+      </section>
+
+      <!-- Anúncios do Dojo -->
+      <section id="anuncios" aria-labelledby="titulo-anuncios">
+        <h2 id="titulo-anuncios">Anúncios do Dojo</h2>
+        <div class="anuncios">
+          <ul>
+            <li>Exame de graduação dia 10/05</li>
+            <li>Traga kimono limpo nas segundas-feiras</li>
+            <li>Treino extra sábado!</li>
+          </ul>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <p>© 2025 Dojo TC</p>
+    </footer>
+
+    <script src="aluno.js"></script>
+  </body>
+</html>

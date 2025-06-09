@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login</title>
+    <link rel="stylesheet" href="styles/index.css" />
+  </head>
+  <body>
+    <nav class="navbar">
+      <div class="navbar-container">
+        <a href="login-aluno.html" class="navbar-link right-align"
+          >Login do Aluno</a
+        >
+      </div>
+    </nav>
+    <div class="login-container">
+      <a href="professor.html"
+        ><h1 class="text-2xl font-bold text-center text-gray-800 mb-6">
+          Login do Professor
+        </h1></a
+      >
+      <div
+        id="error-message"
+        role="alert"
+        class="error-message hidden text-center mb-4"
+      >
+        Usuário ou senha incorretos
+      </div>
+      <form id="loginForm">
+        <div>
+          <div class="mb-4">
+            <label
+              for="username"
+              class="block text-sm font-medium text-gray-700"
+              >Usuário:</label
+            >
+            <input
+              type="text"
+              id="username"
+              name="username"
+              placeholder="Digite seu usuário"
+              class="mt-1 w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500"
+              required
+              autocomplete="username"
+              aria-invalid="false"
+              aria-describedby="error-message"
+            />
+          </div>
+          <div class="mb-6">
+            <label
+              for="password"
+              class="block text-sm font-medium text-gray-700"
+              >Senha:</label
+            >
+            <input
+              type="password"
+              id="password"
+              name="password"
+              placeholder="Digite sua senha"
+              class="mt-1 w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500"
+              required
+              autocomplete="current-password"
+              aria-invalid="false"
+              aria-describedby="error-message"
+            />
+          </div>
+          <button type="submit" class="enter">Entrar</button>
+        </div>
+      </form>
+    </div>
+
+    <script src="javascript/index.js"></script>
+  </body>
+</html>
