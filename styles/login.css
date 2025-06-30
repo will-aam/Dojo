@@ -1,12 +1,45 @@
+@import url("https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap");
+
+:root {
+  --cor-fundo-principal: #111827; /* Cinza Escuro Frio */
+  --cor-fundo-elemento: #1f2937; /* Cinza Escuro Secundário */
+  --cor-borda: #374151; /* Cinza Médio */
+
+  --cor-texto-principal: #f9fafb; /* Branco Suave */
+  --cor-texto-secundario: #9ca3af; /* Cinza Claro */
+  --cor-destaque: #f59e0b; /* Âmbar/Dourado para destaque */
+
+  --cor-sucesso: #10b981; /* Verde Esmeralda */
+  --cor-sucesso-fundo: rgba(16, 185, 129, 0.1);
+  --cor-erro: #ef4444; /* Vermelho */
+  --cor-erro-fundo: rgba(239, 68, 68, 0.1);
+
+  --fonte-principal: "Nunito", sans-serif;
+  --sombra-card: 0 4px 6px rgba(0, 0, 0, 0.2);
+  --raio-borda: 8px;
+}
+
+body.dark-mode {
+  --cor-fundo: #212529;
+  --cor-elemento: #343a40;
+  --cor-texto: #f8f9fa;
+  --cor-texto-secundario: #adb5bd;
+  --cor-borda: #495057;
+  --cor-primaria: #0d6efd;
+}
+
 body {
-  background: #f8fafc;
+  margin: 0;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin: 0;
-  font-family: "Inter", sans-serif;
+  padding-top: 50px;
+  background-color: var(--cor-fundo);
+  color: var(--cor-texto);
+  transition: background-color 0.2s, color 0.2s;
+  font-size: 14px;
 }
 
 .login-container {
